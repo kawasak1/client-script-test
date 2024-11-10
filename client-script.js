@@ -62,7 +62,7 @@ async function captureScreenshot(html) {
   const screenWidth = window.innerWidth;
   const screenHeight = window.innerHeight;
 
-  const response = await fetch('http://localhost:3000/api/screenshot', {
+  const response = await fetch('https://vapi-test-api.fly.dev/api/screenshot', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -188,6 +188,17 @@ function moveCursorToObject(objectName) {
 
 (async function () {
   try {
+    // let html = document.documentElement.outerHTML;
+    // html = updateRelativePaths(html);
+
+    // const objectsData = await captureScreenshot(html);
+    // console.log(objectsData);
+
+    // moveCursorTo(10, 430);
+    // setTimeout(() => {
+    //   moveCursorTo(373, 315);
+    // }, 2000);
+
     startVapiSDK();
   } catch (error) {
     console.error("Error:", error);
@@ -242,6 +253,9 @@ async function startVapiSDK() {
       });
       setButtonPositionFixed();
 
+      // vapiInstance.on('speech-start', () => {
+      //   console.log('Speech has started');
+      // });
       vapiInstance.on('call-start', async () => {
         console.log('Call has started');
 
