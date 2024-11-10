@@ -84,7 +84,7 @@ async function captureScreenshot(html) {
 let animationFrame;
 let activateEvent = false;
 
-function moveCursorTo(targetX, targetY, duration = 700, bias = 20, proximity = 100) {
+function moveCursorTo(targetX, targetY, duration = 700, bias = 0, proximity = 100) {
   const targetXBiased = targetX + bias;
   const targetYBiased = targetY - bias;
 
