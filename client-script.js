@@ -188,17 +188,6 @@ function moveCursorToObject(objectName) {
 
 (async function () {
   try {
-    // let html = document.documentElement.outerHTML;
-    // html = updateRelativePaths(html);
-
-    // const objectsData = await captureScreenshot(html);
-    // console.log(objectsData);
-
-    // moveCursorTo(10, 430);
-    // setTimeout(() => {
-    //   moveCursorTo(373, 315);
-    // }, 2000);
-
     startVapiSDK();
   } catch (error) {
     console.error("Error:", error);
@@ -253,9 +242,6 @@ async function startVapiSDK() {
       });
       setButtonPositionFixed();
 
-      // vapiInstance.on('speech-start', () => {
-      //   console.log('Speech has started');
-      // });
       vapiInstance.on('call-start', async () => {
         console.log('Call has started');
 
